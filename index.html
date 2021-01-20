@@ -36,7 +36,6 @@
 	
 	<!--proj4-->
 	<script type="text/javascript" src="proj4js/proj4.js"></script>
-	<script type="text/javascript" src="proj4js/25830.js"></script>
 	
     <title>TextSprite example</title>
   </head>
@@ -46,9 +45,6 @@
 	<div id="tools" class="tools" ></div>
 	<div id="progress" style="display:none" ></div>
     <script type="text/javascript">
-		ol.proj.proj4.register(proj4);//ol v5.0.0
-		var projection = ol.proj.get("EPSG:25830");
-		projection.setExtent([ -1500000, 3000000, 2000000, 5000000]);
 		
 		var osmLayer =  new ol.layer.Tile({
 			source: new ol.source.OSM({crossOrigin: 'anonymous'})
@@ -59,10 +55,8 @@
 				osmLayer
 			],
 			view: new ol.View({
-				center: [440000, 4440000],
-				//maxZomm: 12,
-				zoom: 10,
-				projection: projection
+				center: [-411990, 4933238],
+				zoom: 15
 			})
 		});
 		
@@ -92,8 +86,8 @@ function setTR3() {
 	
 	var TXTpms = {	text: '  Texto Ejemplo\n  makeTextSprite', 
 					font: { fontFace: "Arial", fontSize: 29, backgroundColor: {r:200, g:250, b:200, a:0.8}, bold: false }, 
-					position: {x: 440000, y:4440000, z:900, inv:true}, 
-					canvas: { text_Width:292, text_Height:146, scale:1000, borderColor: {r:100, g:200, b:100, a:1.0}, borderThickness: 1 },
+					position: {x: -411990, y:4933238, z:900, inv:true}, 
+					canvas: { text_Width:292, text_Height:146, scale:250, borderColor: {r:100, g:200, b:100, a:1.0}, borderThickness: 1 },
 					center: true};
 	
 	var textSprite = TR3.makeTextSprite( TXTpms );
